@@ -10,6 +10,7 @@
       <property name="position-locked" type="bool" value="true"/>
       <property name="size" type="uint" value="39"/>
       <property name="plugin-ids" type="array">
+        <value type="int" value="6"/>
         <value type="int" value="1"/>
         <value type="int" value="3"/>
         <value type="int" value="5"/>
@@ -52,6 +53,12 @@
       <property name="style" type="uint" value="0"/>
       <property name="expand" type="bool" value="true"/>
     </property>
+<<<<<<< HEAD
+=======
+    <property name="plugin-6" type="string" value="separator">
+      <property name="style" type="uint" value="0"/>
+    </property>
+>>>>>>> 5b202f7b4df4a57f17a8d31649d5e6d14546aa81
     <property name="plugin-7" type="string" value="actions">
       <property name="appearance" type="uint" value="0"/>
       <property name="invert-orientation" type="bool" value="false"/>
