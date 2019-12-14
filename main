@@ -1,0 +1,45 @@
+#!/bin/env sh
+
+set -e
+
+SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
+
+for pkg in "$SCRIPTPATH"/pkg/*; do
+    # shellcheck disable=SC1090
+    . "$pkg"
+done
+
+for pkg in "$SCRIPTPATH"/internal/*; do
+    # shellcheck disable=SC1090
+    . "$pkg"
+done
+
+main() {
+    printf "Installing theme..."
+    installtheme
+    printf "Done\\n"
+
+    printf "Installing icons..."
+    installicons
+    printf "Done\\n"
+
+    printf "Installing fonts..."
+    installfonts
+    printf "Done\\n"
+
+    printf "Installing panel..."
+    changepanel "$SCRIPTPATH"/resources/panel.xml "$SCRIPTPATH"/resources/panel
+    printf "Done\\n"
+
+    printf "Installing wallpaper..."
+    changewallpaper "$SCRIPTPATH"/resources/wallpaper.jpg
+    printf "Done\\n"
+
+    printf "Installing cursors..."
+    installcursor
+    printf "Done\\n"
+
+    echo "All done!"
+}
+
+main "$@"
